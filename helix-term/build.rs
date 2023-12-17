@@ -1,5 +1,3 @@
-extern crate winres;
-
 use helix_loader::grammar::{build_grammars, fetch_grammars};
 
 fn main() {
@@ -9,8 +7,6 @@ fn main() {
             .expect("Failed to compile tree-sitter grammars");
     }
     if cfg!(target_os = "windows") {
-        let mut res = winres::WindowsResource::new();
-        res.set_icon("../contrib/helix-256p.ico");
-        res.compile().unwrap();
+        println!("cargo:rustc-link-lib=./contrib/helix-icon-windows");
     }
 }
