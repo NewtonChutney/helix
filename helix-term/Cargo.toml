@@ -81,6 +81,10 @@ crossterm = { version = "0.27", features = ["event-stream", "use-dev-tty"] }
 [build-dependencies]
 helix-loader = { path = "../helix-loader" }
 
+[target.'cfg(windows)'.build-dependencies]
+# winres to inject icon into Windows binary
+winres = "0.1.12"
+
 [dev-dependencies]
 smallvec = "1.11"
 indoc = "2.0.4"
