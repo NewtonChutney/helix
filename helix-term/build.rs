@@ -7,6 +7,6 @@ fn main() {
             .expect("Failed to compile tree-sitter grammars");
     }
     if cfg!(target_os = "windows") {
-        println!("cargo:rustc-link-lib=./contrib/helix-icon-windows");
+        println!("cargo:rustc-link-lib=contrib/helix-icon-windows");
     }
 }
