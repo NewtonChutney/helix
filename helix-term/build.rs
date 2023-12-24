@@ -7,6 +7,7 @@ fn main() {
             .expect("Failed to compile tree-sitter grammars");
     }
     if cfg!(target_os = "windows") {
+        println!("cargo:warning=CWD: {:?}", std::env::current_dir());
         println!("cargo:rustc-link-lib=contrib/helix-icon-windows");
     }
 }
